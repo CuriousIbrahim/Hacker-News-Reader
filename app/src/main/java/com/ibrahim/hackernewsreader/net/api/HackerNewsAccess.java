@@ -9,12 +9,7 @@ import com.ibrahim.hackernewsreader.net.api.model.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import io.reactivex.Flowable;
 import io.reactivex.Single;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -32,36 +27,31 @@ public class HackerNewsAccess {
 
         service = retrofit.create(HackerNewsService.class);
     }
-//    public List<Item> topStories() {
-//
-//        List<Item> items = new ArrayList<>();
-//
-//        Flowable<List<Long>> storyIds = service.topStories();
-//
-//        Flowable.fromArray(storyIds).subscribe(new Consumer<Flowable<List<Long>>>() {
-//            @Override
-//            public void accept(Flowable<List<Long>> listFlowable) throws Exception {
-//                for (long id : listFlowable) {
-//
-//                }
-//            }
-//        })
-//    }
+    public List<Item> topStories() {
 
-//    public Post getPost(long id) {
-//        Single<HNItem> item = service.item(id);
-//
-//        Item post;
-//
-//        item.subscribe(new Consumer<HNItem>() {
-//            @Override
-//            public void accept(HNItem hnItem) throws Exception {
-//                Type type = hnItem.getType();
-//
-//                post = ItemFactory.makeItem(type);
-//
-//
-//            }
-//        })
-//    }
+        List<Item> items = new ArrayList<>();
+
+        Single<List<Long>> storyIds = service.topStories();
+
+        storyIds.subscribe(s -> {
+           for (long id : s) {
+               items.add(getPost(id));
+           }
+        });
+        return topStories();
+    }
+
+    public Post getPost(long id) {
+        Single<HNItem> item = service.item(id);
+
+        final Post[] post = new Post[1];
+
+        item.subscribe(s -> {
+            post[0] = ItemFactory.makePost(s);
+
+        });
+
+
+        return post[0];
+    }
 }
