@@ -3,9 +3,22 @@ package com.ibrahim.hackernewsreader.model.base;
 import java.util.List;
 
 public abstract class Post extends Item {
-    String title;
-    private int descendants;
-    int score;
-    private List<Item> kids;
+    private String title;
+    private int score;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 }
