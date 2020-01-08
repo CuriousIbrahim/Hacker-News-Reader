@@ -1,37 +1,38 @@
 package com.ibrahim.hackernewsreader.net.api;
 
-import com.ibrahim.hackernewsreader.net.api.model.Item;
+import com.ibrahim.hackernewsreader.net.api.model.HNItem;
 
 import java.util.List;
 
-import retrofit2.Call;
+import io.reactivex.Flowable;
+import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface HackerNewsService {
 
     @GET("v0/item/{item}.json")
-    Call<Item> item(@Path("item") long item);
+    Single<HNItem> item(@Path("item") long item);
 
     @GET("v0/user/{user}.json")
-    Call<Item> user(@Path("user") long user);
+    Single<HNItem> user(@Path("user") long user);
 
     @GET("v0/topstories.json")
-    Call<List<Long>> topStories();
+    Flowable<List<Long>> topStories();
 
     @GET("v0/newstories")
-    Call<List<Long>> newStories();
+    Flowable<List<Long>> newStories();
 
     @GET("v0/beststories")
-    Call<List<Long>> bestStories();
+    Flowable<List<Long>> bestStories();
 
     @GET("v0/askstories")
-    Call<List<Long>> askStories();
+    Flowable<List<Long>> askStories();
 
     @GET("v0/showstories")
-    Call<List<Long>> showStories();
+    Flowable<List<Long>> showStories();
 
     @GET("v0/jobstories")
-    Call<List<Long>> jobStories();
+    Flowable<List<Long>> jobStories();
 
 }
