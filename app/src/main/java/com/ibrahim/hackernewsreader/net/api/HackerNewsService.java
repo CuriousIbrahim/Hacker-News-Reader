@@ -5,6 +5,7 @@ import com.ibrahim.hackernewsreader.net.api.model.HNItem;
 import java.util.List;
 
 import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -18,7 +19,7 @@ public interface HackerNewsService {
     Single<HNItem> user(@Path("user") long user);
 
     @GET("v0/topstories.json")
-    Flowable<List<Long>> topStories();
+    Single<List<Long>> topStories();
 
     @GET("v0/newstories")
     Flowable<List<Long>> newStories();
