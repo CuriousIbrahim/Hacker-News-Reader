@@ -3,16 +3,16 @@ package com.ibrahim.hackernewsreader.model.base;
 import java.util.List;
 
 public abstract class Item {
-    private int id;
+    private long id;
     private String by;
     private String text = "";
-    private int time;
+    private long time;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -32,11 +32,11 @@ public abstract class Item {
         this.text = text;
     }
 
-    public int getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(long time) {
         this.time = time;
     }
 }

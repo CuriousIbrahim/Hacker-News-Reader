@@ -1,21 +1,29 @@
 package com.ibrahim.hackernewsreader.net.api.model;
 
+import java.util.List;
+
 public class HNItem {
+
+    public static final int JOB = 1;
+    public static final int STORY = 2;
+    public static final int COMMENT = 3;
+    public static final int POLL = 4;
+    public static final int POLLPOT = 5;
 
     long id;
     boolean deleted;
-    Type type;
+    String type;
     String by;
     long time;
-    String text;
+    String text = "";
     boolean dead;
     long parent;
-    long poll;
-    long kids[];
+    int poll;
+    List<Long> kids;
     String url;
     int score;
     String title;
-    long parts[];
+    List<Long> parts;
     int descendants;
 
     public long getId() {
@@ -34,11 +42,11 @@ public class HNItem {
         this.deleted = deleted;
     }
 
-    public Type getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -82,19 +90,19 @@ public class HNItem {
         this.parent = parent;
     }
 
-    public long getPoll() {
+    public int getPoll() {
         return poll;
     }
 
-    public void setPoll(long poll) {
+    public void setPoll(int poll) {
         this.poll = poll;
     }
 
-    public long[] getKids() {
+    public List<Long> getKids() {
         return kids;
     }
 
-    public void setKids(long[] kids) {
+    public void setKids(List<Long> kids) {
         this.kids = kids;
     }
 
@@ -122,11 +130,11 @@ public class HNItem {
         this.title = title;
     }
 
-    public long[] getParts() {
+    public List<Long> getParts() {
         return parts;
     }
 
-    public void setParts(long[] parts) {
+    public void setParts(List<Long> parts) {
         this.parts = parts;
     }
 
@@ -137,4 +145,26 @@ public class HNItem {
     public void setDescendants(int descendants) {
         this.descendants = descendants;
     }
+
+    public boolean isJob() {
+        return type.equals("job");
+    }
+
+    public boolean isStory() {
+        return type.equals("story");
+    }
+
+    public boolean isComment() {
+        return type.equals("comment");
+    }
+
+    public boolean isPoll() {
+        return type.equals("poll");
+    }
+
+    public boolean isPollOpt() {
+        return type.equals("pollopt");
+    }
+
+
 }
