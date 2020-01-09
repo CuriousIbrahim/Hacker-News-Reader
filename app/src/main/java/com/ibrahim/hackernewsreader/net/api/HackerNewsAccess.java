@@ -1,5 +1,6 @@
 package com.ibrahim.hackernewsreader.net.api;
 
+import com.ibrahim.hackernewsreader.model.User;
 import com.ibrahim.hackernewsreader.model.base.Item;
 import com.ibrahim.hackernewsreader.model.base.Post;
 import com.ibrahim.hackernewsreader.net.api.factory.ItemFactory;
@@ -41,6 +42,19 @@ public class HackerNewsAccess {
         return topStories();
     }
 
+    public Item getItem(long id) {
+        Single<HNItem> item = service.item(id);
+
+        final Item[] items = new Item[1];
+
+        item.subscribe(s -> {
+            items[0] = ItemFactory.makeItem(s);
+
+        });
+
+        return items[0];
+    }
+
     public Post getPost(long id) {
         Single<HNItem> item = service.item(id);
 
@@ -51,7 +65,18 @@ public class HackerNewsAccess {
 
         });
 
-
         return post[0];
+    }
+
+    public User getUser(long id) {
+        Single<User> user = service.user(id);
+
+        User toReturn[] = new User[1];
+
+        user.subscribe(u -> {
+            toReturn[0] = u;
+        });
+
+        return toReturn[0];
     }
 }
