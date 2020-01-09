@@ -1,5 +1,6 @@
 package com.ibrahim.hackernewsreader.net.api;
 
+import com.ibrahim.hackernewsreader.model.User;
 import com.ibrahim.hackernewsreader.net.api.model.HNItem;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public interface HackerNewsService {
     Single<HNItem> item(@Path("item") long item);
 
     @GET("v0/user/{user}.json")
-    Single<HNItem> user(@Path("user") long user);
+    Single<User> user(@Path("user") long user);
 
     @GET("v0/topstories.json")
     Single<List<Long>> topStories();
