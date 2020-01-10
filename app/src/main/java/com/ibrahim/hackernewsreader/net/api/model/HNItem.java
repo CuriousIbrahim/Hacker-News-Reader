@@ -10,21 +10,21 @@ public class HNItem {
     public static final int POLL = 4;
     public static final int POLLPOT = 5;
 
-    long id;
-    boolean deleted;
-    String type;
-    String by;
-    long time;
-    String text = "";
-    boolean dead;
-    long parent;
-    int poll;
-    List<Long> kids;
-    String url = "";
-    int score;
-    String title;
-    List<Long> parts;
-    int descendants;
+    private long id;
+    private boolean deleted;
+    private String type;
+    private String by;
+    private long time;
+    private String text = "";
+    private boolean dead;
+    private long parent;
+    private int poll;
+    private List<Long> kids;
+    private String url = "";
+    private int score;
+    private String title;
+    private List<Long> parts;
+    private int descendants;
 
     public long getId() {
         return id;

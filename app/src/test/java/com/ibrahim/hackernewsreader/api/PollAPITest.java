@@ -14,7 +14,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class PollAPITest extends APITest implements IPollPostTestCase {
 
-    PollPost poll;
+    private PollPost poll;
 
     @Override
     @Before

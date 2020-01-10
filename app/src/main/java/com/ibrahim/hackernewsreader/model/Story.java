@@ -4,7 +4,7 @@ import com.ibrahim.hackernewsreader.model.base.CommentablePost;
 import com.ibrahim.hackernewsreader.model.base.Post;
 
 public class Story extends CommentablePost {
-    String url;
+    private String url;
 
     public String getUrl() {
         return url;

@@ -3,8 +3,8 @@ package com.ibrahim.hackernewsreader.model.base;
 import java.util.List;
 
 public class CommentablePost extends Post {
-    List<Long> kids;
-    int descendants;
+    private List<Long> kids;
+    private int descendants;
 
     public List<Long> getKids() {
         return kids;

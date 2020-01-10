@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HackerNewsAccess {
 
-    private HackerNewsService service;
+    private final HackerNewsService service;
 
     public HackerNewsAccess() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -73,7 +73,7 @@ public class HackerNewsAccess {
     public User getUser(long id) {
         Single<User> user = service.user(id);
 
-        User toReturn[] = new User[1];
+        User[] toReturn = new User[1];
 
         user.subscribe(u -> {
             toReturn[0] = u;

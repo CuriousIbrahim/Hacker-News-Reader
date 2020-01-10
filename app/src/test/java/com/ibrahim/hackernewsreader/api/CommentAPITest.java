@@ -13,7 +13,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class CommentAPITest extends APITest implements ICommentTestCase {
 
-    Comment comment;
+    private Comment comment;
 
     @Override
     @Before
@@ -30,14 +30,8 @@ public class CommentAPITest extends APITest implements ICommentTestCase {
 
     @Override
     @Test
-    public void check_descendants() {
-
-    }
-
-    @Override
-    @Test
     public void check_kids() {
-        long expected[] = {2922097, 2922429, 2924562, 2922709, 2922573, 2922140, 2922141};
+        long[] expected = {2922097, 2922429, 2924562, 2922709, 2922573, 2922140, 2922141};
         assertArrayEquals(expected, Util.listToArrayLong(comment.getKids()));
     }
 

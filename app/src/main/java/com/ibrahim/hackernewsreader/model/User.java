@@ -1,12 +1,12 @@
 package com.ibrahim.hackernewsreader.model;
 
 public class User {
-    long id;
-    int delay;
-    long created;
-    int karma;
-    String about;
-    long submitted[];
+    private long id;
+    private int delay;
+    private long created;
+    private int karma;
+    private String about;
+    private long[] submitted;
 
     public long getId() {
         return id;

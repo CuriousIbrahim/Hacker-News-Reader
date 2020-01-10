@@ -13,7 +13,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class AskAPITest extends APITest implements IStoryTestCase {
 
-    Story ask;
+    private Story ask;
 
     @Override
     @Before

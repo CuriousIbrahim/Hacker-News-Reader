@@ -6,7 +6,7 @@ import com.ibrahim.hackernewsreader.model.base.Post;
 import java.util.List;
 
 public class PollPost extends CommentablePost {
-    List<Long> parts;
+    private List<Long> parts;
 
     public List<Long> getParts() {
         return parts;

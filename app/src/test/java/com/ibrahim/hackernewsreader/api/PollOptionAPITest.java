@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PollOptionAPITest extends APITest implements IPollOptionTestCase {
 
-    PollOption pollOption;
+    private PollOption pollOption;
 
     @Override
     @Before
