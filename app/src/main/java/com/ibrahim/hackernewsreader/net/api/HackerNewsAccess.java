@@ -28,6 +28,7 @@ public class HackerNewsAccess {
 
         service = retrofit.create(HackerNewsService.class);
     }
+
     public List<Item> topStories() {
 
         List<Item> items = new ArrayList<>();
@@ -39,7 +40,8 @@ public class HackerNewsAccess {
                items.add(getPost(id));
            }
         });
-        return topStories();
+
+        return items;
     }
 
     public Item getItem(long id) {

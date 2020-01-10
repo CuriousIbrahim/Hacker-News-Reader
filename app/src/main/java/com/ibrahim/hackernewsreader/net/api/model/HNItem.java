@@ -20,7 +20,7 @@ public class HNItem {
     long parent;
     int poll;
     List<Long> kids;
-    String url;
+    String url = "";
     int score;
     String title;
     List<Long> parts;

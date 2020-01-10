@@ -23,6 +23,8 @@ public class ItemFactory {
                item = new Comment();
                ((Comment) item).setDescendants(hnItem.getDescendants());
                ((Comment) item).setKids(hnItem.getKids());
+               ((Comment) item).setParent(hnItem.getParent());
+
            } else if (hnItem.isPollOpt()) {
                item = new PollOption();
                ((PollOption) item).setPoll(hnItem.getPoll());
