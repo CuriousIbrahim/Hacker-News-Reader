@@ -18,7 +18,7 @@ public class AskAPITest extends APITest implements IStoryTestCase {
     @Override
     @Before
     public void getItem() {
-        ask = (Story) access.getItem(160705);
+        ask = (Story) access.getItem(121003);
     }
 
     @Override

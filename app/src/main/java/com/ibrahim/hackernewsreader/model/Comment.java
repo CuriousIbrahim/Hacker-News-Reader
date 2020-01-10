@@ -5,15 +5,15 @@ import com.ibrahim.hackernewsreader.model.base.Item;
 import java.util.List;
 
 public class Comment extends Item {
-    String parent;
+    long parent;
     private int descendants;
     private List<Long> kids;
 
-    public String getParent() {
+    public long getParent() {
         return parent;
     }
 
-    public void setParent(String parent) {
+    public void setParent(long parent) {
         this.parent = parent;
     }
 
